@@ -12,11 +12,14 @@
 </style>
 <script type="text/javascript">
 function showIcon (db,nb,br,en) {
-	console.log(Math.ceil(db/10) + " " + Math.ceil(nb/10) + " " + Math.ceil(br/10) + " " + Math.ceil(en/10));
+
+	document.getElementById('drlbl').innerHTML="<font size='3' color='ffffff'>Driveby: "+db+"</font>";
+	document.getElementById('nrlbl').innerHTML="<font size='3' color='ffffff'>Driveby: "+nb+"</font>";
+	document.getElementById('brlbl').innerHTML="<font size='3' color='ffffff'>Driveby: "+br+"</font>";
+	document.getElementById('enlbl').innerHTML="<font size='3' color='ffffff'>Driveby: "+en+"</font>";
 
 	for (i=0; i<Math.ceil(db/10);i++){
 		randid="dr"+Math.floor(Math.random()*36+1);
-		console.log(randid+"******");
 		document.getElementById(randid).style.visibility="visible";
 	}
 	for (i=0; i<Math.ceil(nb/10);i++){
@@ -43,6 +46,11 @@ function hideAll(){
 	for(i=1;i<=18;i++){
 		document.getElementById("en"+i).style.visibility="hidden";
 	}
+	document.getElementById('drlbl').innerHTML="";
+	document.getElementById('nrlbl').innerHTML="";
+	document.getElementById('brlbl').innerHTML="";
+	document.getElementById('enlbl').innerHTML="";
+
 }
 </script>
 </head>
@@ -51,8 +59,8 @@ function hideAll(){
 <h1>Shopper Funnel Chart</h1>
 Driveby: <input id="driveby" value="89"> &nbsp; Nearby: <input id="nearby" value="23"> &nbsp; Browsing: <input id="browsing" value="39"> &nbsp; Engaged: <input id = "engaged" value="18"> &nbsp; <button type="button" id="go" onClick=showIcon(document.getElementById('driveby').value,document.getElementById('nearby').value,document.getElementById('browsing').value,document.getElementById('engaged').value)>Go</button> &nbsp; <button type="button" id="hideall" onClick=hideAll()>Hide All</button>
 
-<table background="funnel_bg.png">
-	<tr>
+<table background="funnel_bg.png" border="0" margin="0" padding="0">
+	<tr border="0" margin="0" padding="0">
 		<td><img id ="dr1" class="hideimg" src="driveby_small.png"></td>
 		<td><img id ="dr2" class="hideimg" src="driveby_small.png"></td>
 		<td><img id ="dr3" class="hideimg" src="driveby_small.png"></td>
@@ -75,7 +83,7 @@ Driveby: <input id="driveby" value="89"> &nbsp; Nearby: <input id="nearby" value
 		<td><img id ="en2" class="hideimg" src="engaged_small.png"></td>
 		<td><img id ="en3" class="hideimg" src="engaged_small.png"></td>
 	</tr>
-	<tr>
+	<tr border="0" margin="0" padding="0">
 		<td><img id ="dr7" class="hideimg" src="driveby_small.png"></td>
 		<td><img id ="dr8" class="hideimg" src="driveby_small.png"></td>
 		<td><img id ="dr9" class="hideimg" src="driveby_small.png"></td>
@@ -98,7 +106,7 @@ Driveby: <input id="driveby" value="89"> &nbsp; Nearby: <input id="nearby" value
 		<td><img id ="en5" class="hideimg" src="engaged_small.png"></td>
 		<td><img id ="en6" class="hideimg" src="engaged_small.png"></td>
 	</tr>
-	<tr>
+	<tr border="0" margin="0" padding="0">
 		<td><img id ="dr13" class="hideimg" src="driveby_small.png"></td>
 		<td><img id ="dr14" class="hideimg" src="driveby_small.png"></td>
 		<td><img id ="dr15" class="hideimg" src="driveby_small.png"></td>
@@ -121,7 +129,7 @@ Driveby: <input id="driveby" value="89"> &nbsp; Nearby: <input id="nearby" value
 		<td><img id ="en8" class="hideimg" src="engaged_small.png"></td>
 		<td><img id ="en9" class="hideimg" src="engaged_small.png"></td>
 	</tr>
-	<tr>
+	<tr border="0" margin="0" padding="0">
 		<td><img id ="dr19" class="hideimg" src="driveby_small.png"></td>
 		<td><img id ="dr20" class="hideimg" src="driveby_small.png"></td>
 		<td><img id ="dr21" class="hideimg" src="driveby_small.png"></td>
@@ -144,7 +152,7 @@ Driveby: <input id="driveby" value="89"> &nbsp; Nearby: <input id="nearby" value
 		<td><img id ="en11" class="hideimg" src="engaged_small.png"></td>
 		<td><img id ="en12" class="hideimg" src="engaged_small.png"></td>
 	</tr>
-	<tr>
+	<tr border="0" margin="0" padding="0">
 		<td><img id ="dr25" class="hideimg" src="driveby_small.png"></td>
 		<td><img id ="dr26" class="hideimg" src="driveby_small.png"></td>
 		<td><img id ="dr27" class="hideimg" src="driveby_small.png"></td>
@@ -167,7 +175,7 @@ Driveby: <input id="driveby" value="89"> &nbsp; Nearby: <input id="nearby" value
 		<td><img id ="en14" class="hideimg" src="engaged_small.png"></td>
 		<td><img id ="en15" class="hideimg" src="engaged_small.png"></td>
 	</tr>
-	<tr>
+	<tr border="0" margin="0" padding="0">
 		<td><img id ="dr31" class="hideimg" src="driveby_small.png"></td>
 		<td><img id ="dr32" class="hideimg" src="driveby_small.png"></td>
 		<td><img id ="dr33" class="hideimg" src="driveby_small.png"></td>
@@ -189,6 +197,12 @@ Driveby: <input id="driveby" value="89"> &nbsp; Nearby: <input id="nearby" value
 		<td><img id ="en16" class="hideimg" src="engaged_small.png"></td>
 		<td><img id ="en17" class="hideimg" src="engaged_small.png"></td>
 		<td><img id ="en18" class="hideimg" src="engaged_small.png"></td>
+	</tr>
+	<tr border="0" margin="0" padding="0">
+		<td id="drlbl" bgcolor="1A0000" colspan="6" color="FFFFFF"></td>
+		<td id="nrlbl" bgcolor="800000" colspan="3" color="FFFFFF"></td>
+		<td id="brlbl" bgcolor="660033" colspan="9" color="FFFFFF"></td>
+		<td id="enlbl" bgcolor="000099" colspan="3" color="FFFFFF"></td>
 	</tr>
 </table>
 
